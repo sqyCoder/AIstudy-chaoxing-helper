@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  background: #f5f6fa;
+  color: #1f2430;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+header .sub {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: #1d4ed8;
+  border-left: 3px solid #2563eb;
+  padding-left: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px dashed #eef0f4;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row.col {
+  display: block;
+}
+
+.row.col > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.row > span {
+  flex: 0 0 auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+  padding: 6px 9px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+  min-width: 240px;
+  max-width: 100%;
+}
+
+.row.col input {
+  width: 100%;
+  min-width: 0;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.hint {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+  background: #f9fafb;
+  border-left: 3px solid #d1d5db;
+  padding: 8px 10px;
+  border-radius: 0 6px 6px 0;
+}
+
+.hint code {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 7px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1f2430;
+}
+
+button:hover {
+  background: #f3f4f6;
+}
+
+button.primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+button.primary:hover {
+  background: #1d4ed8;
+}
+
+.result {
+  font-size: 12px;
+  color: #059669;
+}
+
+.result.err {
+  color: #dc2626;
+}
+
+footer p {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+#originBox {
+  margin-top: 10px;
+}
+
+/* ---- 引擎预设 ---- */
+.presets {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0 12px;
+  padding: 10px;
+  background: #eef2ff;
+  border-radius: 8px;
+}
+
+.presetsLabel {
+  font-size: 12px;
+  color: #3730a3;
+}
+
+button.preset {
+  padding: 5px 12px;
+  font-size: 12px;
+  background: #fff;
+  border-color: #c7d2fe;
+  color: #3730a3;
+}
+
+button.preset:hover {
+  background: #e0e7ff;
+}
+
+/* ---- 题库 ---- */
+.bank {
+  margin-top: 12px;
+}
+
+.bankStats {
+  font-size: 12px;
+  color: #374151;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 9px 11px;
+  line-height: 1.7;
+}
+
+button.danger {
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+button.danger:hover {
+  background: #fef2f2;
+}

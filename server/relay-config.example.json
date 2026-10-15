@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy this file to relay-config.json and fill in your own key. relay-config.json is never packaged or sent anywhere.",
+  "upstreamBase": "https://api.deepseek.com/v1",
+  "upstreamKey": "sk-PUT-YOUR-DEEPSEEK-KEY-HERE",
+  "upstreamModel": "deepseek-chat",
+  "upstreamVision": "0",
+  "port": 8787,
+  "relayToken": ""
+}

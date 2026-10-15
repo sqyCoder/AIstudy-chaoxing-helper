@@ -1,0 +1,78 @@
+{
+  "manifest_version": 3,
+  "name": "网课助手·复刻版（超星学习通）",
+  "version": "1.0.0",
+  "description": "视频助手 + 解题助手。基于对 daxuesoutijiang 插件 v1.17.1 的逆向复刻，仅支持超星学习通 / 超星泛雅。",
+  "minimum_chrome_version": "111",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs",
+    "cookies"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "src/background/index.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "网课助手·复刻版",
+    "default_popup": "src/popup/popup.html"
+  },
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.chaoxing.com/ananas/modules/video/*",
+        "https://*.xuexitong.com/ananas/modules/video/*"
+      ],
+      "js": ["src/adapter/video-rate.js"],
+      "world": "MAIN",
+      "all_frames": true,
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://*.chaoxing.com/*", "https://*.xuexitong.com/*"],
+      "js": ["src/adapter/task-scan.js"],
+      "world": "MAIN",
+      "all_frames": false,
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://*.chaoxing.com/*", "https://*.xuexitong.com/*"],
+      "js": ["src/adapter/ueditor.js"],
+      "world": "MAIN",
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://*.chaoxing.com/*", "https://*.xuexitong.com/*"],
+      "js": ["src/adapter/enable-copy.js"],
+      "world": "MAIN",
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://*.chaoxing.com/*", "https://*.xuexitong.com/*"],
+      "js": [
+        "src/common/consts.js",
+        "src/common/util.js",
+        "src/common/font-decode.js",
+        "src/content/cx-course.js",
+        "src/content/side-bar.js"
+      ],
+      "all_frames": false,
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": ["src/content/deepseek.js"],
+      "all_frames": false,
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>网课助手·复刻版</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>网课助手</h1>
+      <span class="tag">超星学习通</span>
+    </header>
+
+    <div class="row">
+      <span>视频助手</span>
+      <label class="sw"><input type="checkbox" id="enableVideo" /><i></i></label>
+    </div>
+    <div class="row">
+      <span>解题助手</span>
+      <label class="sw"><input type="checkbox" id="enableExam" /><i></i></label>
+    </div>
+
+    <div class="grid">
+      <label>
+        倍速
+        <select id="playbackRate">
+          <option value="1">1x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+          <option value="1.75">1.75x</option>
+          <option value="2">2x</option>
+          <option value="2.5">2.5x</option>
+          <option value="3">3x</option>
+          <option value="4">4x</option>
+          <option value="8">8x</option>
+          <option value="16">16x</option>
+        </select>
+      </label>
+      <label>
+        答题引擎
+        <select id="answerSource">
+          <option value="relay">答题中转（分享用）</option>
+          <option value="web">网页版 DeepSeek（免费）</option>
+          <option value="bank">仅本地题库</option>
+          <option value="llm">我的大模型</option>
+          <option value="origin">原服务器</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="row">
+      <span>自动提交测验</span>
+      <label class="sw"><input type="checkbox" id="autoSubmitWork" /><i></i></label>
+    </div>
+
+    <p class="status" id="status">正在读取设置…</p>
+
+    <div class="actions">
+      <button id="btnOptions" class="primary">设置</button>
+      <button id="btnReload">刷新页面</button>
+    </div>
+
+    <p class="tip">
+      打开学习通章节页后，页面右上角会出现控制面板，可直接开始/停止任务。
+    </p>
+
+    <script src="../common/consts.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
